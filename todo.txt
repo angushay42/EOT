@@ -1,0 +1,9 @@
+I̶m̶p̶l̶e̶m̶e̶n̶t̶ ̶a̶l̶l̶ ̶i̶t̶e̶m̶s̶ ̶a̶s̶ ̶c̶l̶a̶s̶s̶e̶s̶
+S̶e̶g̶m̶e̶n̶t̶ ̶c̶l̶a̶s̶s̶e̶s̶ ̶i̶n̶t̶o̶ ̶s̶e̶p̶a̶r̶a̶t̶e̶ ̶f̶i̶l̶e̶s̶
+Add function to AllPurpose that takes incompatible enchantments as params
+- and returns whether the user has inputted mutually exclusive enchants, default none
+- this can be in items.py
+Add tests to ensure classes are constructed as intended
+Squash commits from items
+
+T̶e̶s̶t̶ ̶m̶a̶c̶e̶ ̶e̶n̶c̶h̶a̶n̶t̶s̶ ̶t̶o̶ ̶f̶i̶n̶d̶ ̶m̶u̶l̶t̶i̶p̶l̶i̶e̶r̶s̶ ̶(̶i̶t̶'̶s̶ ̶o̶n̶ ̶t̶h̶e̶ ̶d̶e̶d̶i̶c̶a̶t̶e̶d̶ ̶w̶i̶k̶i̶,̶ ̶n̶o̶t̶ ̶f̶a̶n̶d̶o̶m̶)̶
