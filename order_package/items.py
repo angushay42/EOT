@@ -1,4 +1,6 @@
 from collections import deque
+
+
 # classes for all tools
 
 class AllPurpose():

@@ -1,4 +1,7 @@
+
+
 from order_package.utils import freq
+from order_package.constants import MULTIPLIERS
 
 '''
 String input will be something like: Pickaxe ME UB EF5 FO3
