@@ -1,4 +1,6 @@
 from collections import deque
+
+
 def freq(size: int) -> dict:
     '''
     Returns the frequency of additions for an enchantment tree.
@@ -16,6 +18,9 @@ def freq(size: int) -> dict:
     return hmp
 
 def pens(n):
+    '''
+    Returns the sum of penalties within a optimised level enchantment tree.
+    '''
     arr = [0]*n
     q = deque(arr)
     ans = 0
