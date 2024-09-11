@@ -36,6 +36,3 @@ def pens(n):
         q.append(max(x,y)+1)
 
     return ans
-for i in range(1,16):
-    print(i, pens(i))
-# print(7, pens(7))
