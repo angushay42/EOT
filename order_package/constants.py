@@ -64,4 +64,9 @@ MULTIPLIERS = {
     'MLTI': (4,2),
     'PIER': (1,1),
     'QUIK': (2,1),
-    }
+
+    # Mace
+    'BRCH': (4,2),
+    'WIND': (4,2),
+    'DENS': (2,1)
+}
