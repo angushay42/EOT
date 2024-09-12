@@ -1,9 +1,12 @@
-from items import AllPurpose
+from .items import AllPurpose
 
 class Armour(AllPurpose):
     def __init__(self) -> None:
         super().__init__()
-        self.enchants += ['PROT','BLPR','FIPR','PRPR','THRN']
+        self.protections = ['PROT','BLPR','FIPR','PRPR']
+        self.enchants += ['THRN'] + self.protections
+        self.mutuals.append(self.protections)
+
 
 class Helmet(Armour):
     def __init__(self) -> None:
@@ -21,6 +24,6 @@ class Leggings(Armour):
 
 class Boots(Armour):
     def __init__(self) -> None:
-        # incompatible: Frost Walker, Depth Strider 
         super().__init__()
+        self.mutuals.append(['FRST','DPTH'])
         self.enchants += ['FRST','SOUL','DPTH','FEAT']

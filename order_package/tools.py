@@ -1,10 +1,10 @@
-from items import AllPurpose
+from .items import AllPurpose
 
 
 class Tools(AllPurpose):
     def __init__(self) -> None:
-        # incompatible: FORT, SILK
         super().__init__()
+        self.mutuals.append(['FORT', 'SILK'])
         self.enchants += ['FORT', 'SILK', 'EFFI']
 
 
@@ -16,6 +16,7 @@ class Pickaxe(Tools):
 class Axe(Tools):
     def __init__(self) -> None:
         super().__init__()
+        self.mutuals.append(self.damages)
         self.enchants += self.damages
 
 
@@ -33,7 +34,3 @@ class FishingRod(AllPurpose):
     def __init__(self) -> None:
         super().__init__()
         self.enchants += ['LUCK','LURE']
-
-desired = ['MEND', 'UNBR','IMPL']
-x = Pickaxe()
-print(x.checker(desired))

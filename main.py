@@ -1,5 +1,3 @@
-
-
 from order_package.utils import freq
 from order_package.constants import MULTIPLIERS
 
@@ -27,7 +25,6 @@ imports are:
 standard,
 third party 
 local, library specific
-
 '''
 
 def main():
