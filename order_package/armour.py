@@ -1,4 +1,4 @@
-from order_package.items import AllPurpose
+from items import AllPurpose
 
 class Armour(AllPurpose):
     def __init__(self) -> None:

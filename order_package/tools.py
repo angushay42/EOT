@@ -1,4 +1,4 @@
-from order_package.items import AllPurpose
+from items import AllPurpose
 
 
 class Tools(AllPurpose):
@@ -33,3 +33,7 @@ class FishingRod(AllPurpose):
     def __init__(self) -> None:
         super().__init__()
         self.enchants += ['LUCK','LURE']
+
+desired = ['MEND', 'UNBR','IMPL']
+x = Pickaxe()
+print(x.checker(desired))
