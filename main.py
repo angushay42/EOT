@@ -1,5 +1,13 @@
-from order_package.utils import freq
-from order_package.constants import MULTIPLIERS
+from sys import argv
+from typing import Type
+
+
+from order_package.utils import level, level_cost, display_level, optimal, display_optimal
+from order_package.constants import MULTIPLIERS, VALUES, NAMES
+from order_package.items import *
+from order_package.armour import *
+from order_package.tools import *
+from order_package.weapons import * 
 
 '''
 String input will be something like: Pickaxe ME UB EF5 FO3
@@ -27,9 +35,79 @@ third party
 local, library specific
 '''
 
+# Pickaxe * MEND UNBR FORT EFFI * Y
+# already enchanted?
+# UNBR-1 FORT-1 EFFI-2
 def main():
-    print(freq(5))
+    # Variables
+    item = enchants = flag =None
+    edition = 0
+    # Check for nul string
+    if len(argv) > 1:
+        # For future implementation, allow edition to be specified. 
+        # Default is Bedrock.
+        if argv[1] == 'J':
+            edition = 1
+        # Split argv into 
+        try:
+            flag, item, enchants = ' '.join(argv[edition+1:]).split(':')
+        except ValueError:
+            return 1
+    else:
+        flag, item, enchants = 'l', 'Boots', 'UNBR SOUL DPTH FEAT PROT MEND THRN'
+    # Clean up variables
+    item = item.strip()
+    enchants = enchants.strip().split(' ')
+
+    # Initialise temp array.
+    temp = []
+    for idx, e in enumerate(enchants):
+        # Ensure spelling is correct.
+        if e in VALUES:
+            # Multipliers[key][0] represents the multiplier from an item,
+            # and can be implemented later however it is so inefficient to do so,
+            # both in cost of levels and the comparative ease of books, it is not recommended.
+            temp.append((VALUES[e] * MULTIPLIERS[e][1], enchants[idx]))
+    
+    # Sort vals array alongside enchants to ensure they match.
+    vals = [x[0] for x in sorted(temp, reverse=True)]
+    book_names = [NAMES[x[1]] for x in sorted(temp, reverse=True)] # For nicer printing.
+
+
+    # Incorrect input.
+    if not len(vals) == len(book_names):
+        return 2
+    
+    # Class factory.
+    obj = AllPurpose().create(item)()
+    
+    # Check mutually exclusive.
+    if obj.mutual(enchants):
+        return 3
+    
+
+    cost = order = None
+    # Optimal
+    if 'o' in flag:
+        cost, order = optimal(vals)
+        print("To enchant optimally: ")
+        display_optimal(order, book_names)
+    # Level
+    elif 'l' in flag:
+        cost, order = level(len(vals))
+        cost += level_cost(vals)
+        print('To enchant in level order: ')
+        display_level(order, book_names)
+    else: 
+        return 4
+    print('Total cost: {}'.format(cost))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    error_codes = {0: 'Yay!',
+                   1: 'Separating input',
+                   2: 'Invalid enchantment names',
+                   3: 'Mutually exclusive enchantments',
+                   4: 'No flag'}
+    print("Error: {}".format(error_codes[main()]))

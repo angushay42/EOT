@@ -1,4 +1,6 @@
+from typing import Self
 from collections import defaultdict
+
 
 class AllPurpose():
     '''
@@ -6,6 +8,24 @@ class AllPurpose():
     Swords and axes can have any one of the three damage multipliers, and they are both
     subclasses of AllPurpose so self.damages is an array of the damage multipliers.
     '''
+
+    # Class factory method from @vadimpushtaev from: https://medium.com/@vadimpushtaev/python-choosing-subclass-cf5b1b67c696
+    # Map subclasses to base class using hash map
+    subclasses = {}
+
+    @classmethod
+    def register_subclass(cls, item_type: str):
+        def decorator(subclass)-> Self:
+            cls.subclasses[item_type] = subclass
+            return subclass
+        return decorator
+
+    @classmethod
+    def create(cls, item_type)-> Self:
+        if not item_type in cls.subclasses:
+            raise ValueError('Invalid item {}'.format(item_type))
+        return cls.subclasses[item_type]
+
     def __init__(self) -> None:
         '''
         All items will have access to damages, but most won't use them.
@@ -30,7 +50,7 @@ class AllPurpose():
         Returns True if there are conflicting enchantments, False otherwise
         '''
         # Array of counts for different pools
-        count = [0] * len(self.mutuals) 
+        count = [0] * len(self.mutuals)
         # Enumerate to get unpack the value and retaining the use of an index
         for idx, li in enumerate(self.mutuals):
             # Loop through the pool of mutually exclusive enchantments

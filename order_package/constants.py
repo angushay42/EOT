@@ -70,3 +70,141 @@ MULTIPLIERS = {
     'WIND': (4,2),
     'DENS': (2,1)
 }
+
+VALUES = {
+    # All purpose
+    'UNBR': 3,
+    'MEND': 1,
+    'BIND': 1,
+    'VNSH': 1,
+
+    # All armour
+    'PROT': 4,
+    'FIPR': 4,
+    'BLPR': 4,
+    'PRPR': 4,
+    'THRN': 3,
+
+    # Helmet
+    'RESP': 3,
+    'AQUA': 1,
+
+    # Leggings
+    'SWFT': 3,
+
+    # Boots
+    'FRST': 2,
+    'SOUL': 3,
+    'DPTH': 3,
+    'FEAT': 4,
+
+    # All mining tools
+    'EFFI': 5,
+    'SILK': 1,
+    'FORT': 3,
+    
+    # Fishing Rod
+    'LUCK': 3,
+    'LURE': 3,
+
+    # Damage Multipliers
+    'SHRP': 5,
+    'SMTE': 5,
+    'BANE': 5,
+
+    # Sword 
+    'KNCK': 2,
+    'FASP': 2,
+    'LOOT': 3,
+
+    # Bow
+    'POWR': 5,
+    'PNCH': 2,
+    'FLME': 1,
+    'INFI': 1,
+
+    # Trident
+    'IMPL': 5, 
+    'RIPT': 3,
+    'LOYL': 3,
+    'CHAN': 1,
+
+    # Crossbow
+    'MLTI': 1,
+    'PIER': 4,
+    'QUIK': 3,
+
+    # Mace
+    'BRCH': 4,
+    'WIND': 3,
+    'DENS': 5
+}
+
+NAMES = {
+    # All purpose
+    'UNBR': 'Unbreaking',
+    'MEND': 'Mending',
+    'BIND': 'Curse of Binding',
+    'VNSH': 'Curse of Vanishing',
+
+    # All armour
+    'PROT': 'Protection',
+    'FIPR': 'Fire Protection',
+    'BLPR': 'Blast Protection',
+    'PRPR': 'Projectile Protection',
+    'THRN': 'Thorns',
+
+    # Helmet
+    'RESP': 'Repsiration',
+    'AQUA': 'Aqua Affinity',
+
+    # Leggings
+    'SWFT': 'Swift Sneak',
+
+    # Boots
+    'FRST': 'Frost Walker',
+    'SOUL': 'Soul Speed',
+    'DPTH': 'Depth Strider',
+    'FEAT': 'Feather Falling',
+
+    # All mining tools
+    'EFFI': 'Efficiency',
+    'SILK': 'Silk Touch',
+    'FORT': 'Fortune',
+    
+    # Fishing Rod
+    'LUCK': 'Luck of the Sea',
+    'LURE': 'Lure',
+
+    # Damage Multipliers
+    'SHRP': 'Sharpness',
+    'SMTE': 'Smite',
+    'BANE': 'Bane of Anthropods',
+
+    # Sword 
+    'KNCK': 'Knockback',
+    'FASP': 'Fire Aspect',
+    'LOOT': 'Looting',
+
+    # Bow
+    'POWR': 'Power',
+    'PNCH': 'Punch',
+    'FLME': 'Flame',
+    'INFI': 'Infinity',
+
+    # Trident
+    'IMPL': 'Impaling', 
+    'RIPT': 'Riptide',
+    'LOYL': 'Loyalty',
+    'CHAN': 'Channeling',
+
+    # Crossbow
+    'MLTI': 'Multi Shot',
+    'PIER': 'Piercing',
+    'QUIK': 'Quick Charge',
+
+    # Mace
+    'BRCH': 'Breach',
+    'WIND': 'Wind Burst',
+    'DENS': 'Density'
+}
