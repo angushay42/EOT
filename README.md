@@ -3,11 +3,11 @@ Find the optimal order to enchant in Minecraft
 
 
 ## Usage
-Command line interface, order is as follows:
-flag : item : enchantments
-Where flag is either 'o' or 'l' for Optimal or Level solutions respectively
+Command line interface, order is as follows:\
+flag : item : enchantments\
+Where flag is either 'o' or 'l' for Optimal or Level solutions respectively.\
 item is capitalised name of desired item to enchant, represented in camel case so 
-fishing rod becomes FishingRod
+fishing rod becomes FishingRod.\
 enchantments are individual enchantments separated by whitespaces: UNBR MEND FRST (Unbreaking, Mending, Frost Walker)
 
 ## Different solutions
